@@ -185,15 +185,17 @@ set -- "$@" \
   --enable-shared --disable-static --enable-pic \
   --extra-cflags='-Dstatic_assert=_Static_assert' \
   --disable-programs --disable-doc --disable-avdevice --disable-avfilter \
-  --disable-network --disable-swresample \
+  --disable-network \
+  --enable-swresample \
   --disable-debug --enable-small \
   --disable-everything \
   --disable-autodetect \
   --enable-zlib \
   --enable-demuxer=matroska,mov,mpegts,h264,hevc \
-  --enable-parser=h264,hevc,aac,ac3,dvdsub,dvbsub \
+  --enable-parser=h264,hevc,aac,ac3,dca,mlp,dvdsub,dvbsub \
   --enable-bsf=h264_mp4toannexb,hevc_mp4toannexb,extract_extradata \
-  --enable-decoder=pgssub,dvdsub,dvbsub,ass,srt,subrip,text,mov_text,webvtt \
+  --enable-decoder=pgssub,dvdsub,dvbsub,ass,srt,subrip,text,mov_text,webvtt,dca,truehd,mlp \
+  --enable-encoder=ac3 \
   --enable-protocol=file
 
 if [ "${RELEASE:-}" = "1" ]; then
